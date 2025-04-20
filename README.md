@@ -52,20 +52,10 @@ Click below to deploy the bot in one click:
 
 ---
 
-## 📸 Preview
-
-![Bot Preview](https://telegra.ph/file/preview.jpg)
-
----
-
 ## 👤 Developer
 
 Made with ❤️ by [SudipX](https://t.me/sudipx)
 
 ---
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
 
 
