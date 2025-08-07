@@ -5,13 +5,13 @@ import string
 import threading
 from telebot import types
 
-API_KEY = "7767731704:AAFRsNo8appE9Kvl9BTA8GaRGgWUUajRgQY" #your bot token
+API_KEY = "8416170467:AAHiYwynHCMmxGqUztD7CxL2OKtYGFKs1gU" #your bot token
 bot = telebot.TeleBot(API_KEY)
 bot.delete_webhook()
 
 bot_id = 'DEVSUDIPX'
-admin_ids = [7591428898] #add admin id 
-channel_username = "@TeamALXr" #foce join user
+admin_ids = [7728041999] #add admin id 
+channel_username = "@sudipx" #foce join user
 
 admin_uploads = {}
 user_last_code = {}  # NEW: store last used code per user
@@ -61,7 +61,7 @@ def handle_start(message):
     text = message.text
     if text == "/start":
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("📢 Join Channel", url="https://t.me/TeamALX"))
+        markup.add(types.InlineKeyboardButton("📢 Join Channel", url="https://t.me/sudipx"))
         markup.add(types.InlineKeyboardButton("✅ Joined", callback_data='join'))
         bot.send_photo(message.chat.id, photo='https://t.me/botpostingx/12',
                        caption=f"<b>👋 Hey! You need to join our channel to use this bot.</b>",
@@ -81,7 +81,7 @@ def handle_start(message):
 
         if status not in ["member", "administrator", "creator"]:
             markup = types.InlineKeyboardMarkup()
-            markup.add(types.InlineKeyboardButton("📢 Join Channel", url="https://t.me/TeamALX"))
+            markup.add(types.InlineKeyboardButton("📢 Join Channel", url="https://t.me/sudipx"))
             markup.add(types.InlineKeyboardButton("✅ Joined", callback_data='join'))
             bot.send_photo(message.chat.id, photo='https://t.me/botpostingx/12',
                            caption=f"<b>👋 Hey! You need to join our channel to access the files.</b>",
@@ -90,7 +90,7 @@ def handle_start(message):
 
         for file_id in all_links[code]:
             try:
-                sent = bot.copy_message(chat_id=user_id, from_chat_id='-1002545748771', message_id=file_id)  #here your databse channel id
+                sent = bot.copy_message(chat_id=user_id, from_chat_id='-1002806317195', message_id=file_id)  #here your databse channel id
                 threading.Timer(600, lambda: bot.delete_message(user_id, sent.message_id)).start()  # auto-delete after 10 min
             except:
                 continue
@@ -102,7 +102,7 @@ def handle_media(message):
         if len(uploads) >= 25:
             bot.send_message(message.chat.id, "⚠ You already uploaded 25 files. Send /done to get the link.")
             return
-        msg = bot.copy_message(chat_id='-1002545748771', from_chat_id=message.chat.id, message_id=message.message_id) #here your databse channel id 
+        msg = bot.copy_message(chat_id='-1002806317195', from_chat_id=message.chat.id, message_id=message.message_id) #here your databse channel id 
         uploads.append(msg.message_id)
         admin_uploads[message.from_user.id] = uploads
         bot.reply_to(message, f"✅ Added file {len(uploads)}/25")
