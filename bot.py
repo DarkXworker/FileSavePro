@@ -137,33 +137,3 @@ def check_join(call):
         bot.answer_callback_query(call.id, "❌ Please join the channel first!")
 
 bot.infinity_polling()
-# Get the list of users from user_list.json (assuming get_data is implemented correctly)
-    user_list = get_data(f"{bot_id}-user_id.json")
-    if user_list is None:
-        bot.send_message(chat_id, "Error: User list not found.")
-        return
-
-    total_users = len(user_list)
-    total_success = 0
-    total_fail = 0
-
-# Broadcast the message to all users in the user list using copy_message
-    for user_id in user_list:
-        try:
-            bot.copy_message(chat_id=user_id, from_chat_id=chat_id, message_id=message.message_id)
-            total_success += 1
-        except Exception as e:
-            total_fail += 1
-
-    # Emoji Unicode for visual appeal
-    success_emoji = u'\U0001F60E'  # Smiling Face Emoji
-    fail_emoji = u'\U0001F622'  # Crying Face Emoji
-
-    # Compose the message with total counts and emojis
-    response_message = f"Bʀᴏᴀᴅᴄᴀsᴛ Sᴜᴍᴍᴀʀʏ 👇👇👇\n\n"
-    response_message += f"Tᴏᴛᴀʟ Usᴇʀs: {total_users}\n"
-    response_message += f"Tᴏᴛᴀʟ Sᴜᴄᴄᴇss: {total_success} {success_emoji}\n"
-    response_message += f"Tᴏᴛᴀʟ Fᴀɪʟᴇᴅ: {total_fail} {fail_emoji}\n"
-
-    bot.send_message(chat_id, response_message)              
-bot.infinity_polling()
