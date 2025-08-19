@@ -11,7 +11,7 @@ bot.delete_webhook()
 
 bot_id = 'DEVSUDIPX'
 admin_ids = [7728041999] #add admin id 
-channel_username = "@HeavenxChats" #foce join user
+channel_username = "@imsudipx" #foce join user
 
 admin_uploads = {}
 user_last_code = {}  # NEW: store last used code per user
@@ -61,7 +61,7 @@ def handle_start(message):
     text = message.text
     if text == "/start":
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("📢 Join Channel", url="https://t.me/HeavenxChats"))
+        markup.add(types.InlineKeyboardButton("📢 Join Channel", url="https://t.me/imsudipx"))
         markup.add(types.InlineKeyboardButton("✅ Joined", callback_data='join'))
         bot.send_photo(message.chat.id, photo='https://t.me/botpostingx/12',
                        caption=f"<b>👋 Hey! You need to join our channel to use this bot.</b>",
@@ -81,7 +81,7 @@ def handle_start(message):
 
         if status not in ["member", "administrator", "creator"]:
             markup = types.InlineKeyboardMarkup()
-            markup.add(types.InlineKeyboardButton("📢 Join Channel", url="https://t.me/HeavenxChats"))
+            markup.add(types.InlineKeyboardButton("📢 Join Channel", url="https://t.me/imsudipx"))
             markup.add(types.InlineKeyboardButton("✅ Joined", callback_data='join'))
             bot.send_photo(message.chat.id, photo='https://t.me/botpostingx/12',
                            caption=f"<b>👋 Hey! You need to join our channel to access the files.</b>",
