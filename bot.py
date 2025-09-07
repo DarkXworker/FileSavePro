@@ -11,7 +11,7 @@ bot.delete_webhook()
 
 bot_id = 'DEVSUDIPX'
 admin_ids = [7728041999] #add admin id 
-channel_username = "@imsudipx" #foce join user
+channel_username = "@aboutcodex" #foce join user
 
 admin_uploads = {}
 user_last_code = {}  # NEW: store last used code per user
